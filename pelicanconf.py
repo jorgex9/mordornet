@@ -31,6 +31,7 @@ SOCIAL = (('You can add links in your config file', '#'),
 
 DEFAULT_PAGINATION = 10
 
+
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
 
@@ -60,8 +61,15 @@ TAG_PAGE_TITLE = "Post tagged by"
 SITENAME = "Nigromancer"
 SITESUBTITLE = "Escrituras de Mordor"
 SITEKEYWORDS = "GNU Linux Debian Mordor Music Cine Geek Bass"
-SITEURL = "http://nigromancer.com"
+SITEURL = ""
 SOCIAL = (('twitter', 'http://twitter.com/nigrobyte'),)
 GITHUB_USERNAME = "nigromancer"
 BLOG_START_YEAR = "2017"
 COMMENT_SYSTEM_ID = ""
+
+PLUGIN_PATHS = ['../pelican-plugins']
+PLUGINS = [ 'tipue_search']
+
+TEMPLATE_PAGES = {
+        'search.html': 'search.html',
+        }
