@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 AUTHOR = u'Jorge J. Riera'
-SITENAME = u'nigromancer'
+SITENAME = u'mordor-lab'
 SITEURL = ''
 
 PATH = 'content'
@@ -58,8 +58,8 @@ TAG_PAGE_TITLE = "Post tagged by"
 
 #Other theme variables:
 
-SITENAME = "Nigromancer"
-SITESUBTITLE = "Escrituras de Mordor"
+SITENAME = "Mordor-lab"
+SITESUBTITLE = "Las escrituras del Nigromancer"
 SITEKEYWORDS = "GNU Linux Debian Mordor Music Cine Geek Bass"
 SITEURL = ""
 SOCIAL = (('twitter', 'http://twitter.com/nigrobyte'),)
