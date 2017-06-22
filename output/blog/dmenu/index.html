@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>dmenu - Mordor-lab</title>
+      <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../../theme/css/lazystrap.css" rel="stylesheet">
+    <link href="../../theme/css/pygments.css" rel="stylesheet">
+    <link href="../../theme/css/lightbox.css" rel="stylesheet">
+    <link rel="shortcut icon" href="../../theme/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="../../theme/favicon.png" type="image/x-icon" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <meta name="description" content="Las escrituras del Nigromancer" />
+
+    <meta name="keywords" content="GNU Linux Debian Mordor Music Cine Geek Bass,dmenu,debian" />
+</head>
+<body onload="set_years(2017)">
+	<a href="https://github.com/nigromancer" target="blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+    <div class="page">
+      <div class="header">
+        <a href="../..">
+          <img src="../../theme/img/logo.png" alt="lazycoder.ru" />
+        </a>
+        <div class="navbar-desc">
+          Las escrituras del Nigromancer
+        </div>
+      </div>
+      <div class="container">
+          <div class="post-date pull-right">19.06.2017</div>
+          <h2 class="post-header">dmenu</h2>
+          <div class="post-metadata pull-right">
+            <a href="../../tag/dmenu"><b>#</b>dmenu</a>
+            <a href="../../tag/debian"><b>#</b>debian</a>
+          </div>
+          <div class="post-content">
+            <p>Hay mucha genete que prefiere tener lanzadores a un click de distancia, pero para muchos (como yo) alejarse del teclado al mouse implica un esfuerzo extra. Asi que a la hora de lanzar una aplicación lo que prefiero es usar <strong>dmenu</strong>.</p>
+<p>dmenu es rapido, dinamico y ligero para entornos X, originalmente diseñado para <a href="http://dwm.suckless.org/">dwm</a> (un manejador de ventanas que espero pronto escribir sobre el, es especial porque he probado dwmX y me entusiasma mucho).  </p>
+<h2>Instalación</h2>
+<p>En la familia de debian dmenu esta incluido en los paquetes suckless-tools</p>
+<div class="highlight"><pre><span></span># apt-get install suckless-tools
+</pre></div>
+
+
+<h2>Configuración</h2>
+<p>Una vez instalado es recomendable configurar teclas de acceso rapido a dmenu. Esto puede hacerlo via las configuraciones de su entorno grafico (Gnome, KDE, XFCE, Openbox, etc). En mi caso como uso Openbox la configuracion la hago en el archivo <strong> ~.config/openbox/rc.xml</strong>
+Mas presizamente de esta manera:</p>
+<div class="highlight"><pre><span></span><span class="nt">&lt;keybind</span> <span class="na">key=</span><span class="s">&quot;A-F3&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;action</span> <span class="na">name=</span><span class="s">&quot;Execute&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;startupnotify&gt;</span>
+          <span class="nt">&lt;enabled&gt;</span>false<span class="nt">&lt;/enabled&gt;</span>
+          <span class="nt">&lt;name&gt;</span>dmenu-bind<span class="nt">&lt;/name&gt;</span>
+        <span class="nt">&lt;/startupnotify&gt;</span>
+        <span class="nt">&lt;command&gt;</span>~/.config/dmenu/dmenu-bind.sh<span class="nt">&lt;/command&gt;</span>
+      <span class="nt">&lt;/action&gt;</span>
+    <span class="nt">&lt;/keybind&gt;</span>
+</pre></div>
+
+
+<p>Como ven, el comando que ejecuta apunta a <strong> ~/.config/dmenu/dmenu-bind.sh</strong>, este es un script donde he configurado las opciones de como se lanzara mi dmenu. Entra alguanas de las opciones que pueden configurar son: Color de letra, color de fondo, tipo de letra, color de seleccion, posicion, etc.
+Ahora les muestro mi configuración:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#</span>
+<span class="c1"># written for nigromancer @nigrobyte based on Bunsenlabs</span>
+<span class="c1">#</span>
+<span class="c1"># -nb    normal background colour</span>
+<span class="c1"># -nf    normal foreground colour</span>
+<span class="c1"># -sb    selected background colour</span>
+<span class="c1"># -sf    selected foreground colour</span>
+<span class="c1">#</span>
+<span class="c1"># -b    place menu at bottom (otherwise top)</span>
+<span class="c1">#</span>
+<span class="c1"># See &#39;man dmenu&#39; for more information.</span>
+
+<span class="nv">USAGE</span><span class="o">=</span><span class="s2">&quot;\n  To start dmenu at the top or bottom of the screen,\n\</span>
+<span class="s2">  add or remove -b in the dmenu_run command in dmenu-bind.sh.\n\</span>
+<span class="s2">  -b     locate at bottom\n\n\</span>
+<span class="s2">  To change colours, edit the options:\n\n\</span>
+<span class="s2">  -nb    normal background colour\n\</span>
+<span class="s2">  -nf    normal foreground colour\n\</span>
+<span class="s2">  -sb    selected background colour\n\</span>
+<span class="s2">  -sf    selected foreground colour\n\n\</span>
+<span class="s2">  Get all configuration options with &#39;man dmenu&#39;.\n&quot;</span>
+
+<span class="k">if</span> <span class="o">[[</span> <span class="nv">$#</span> <span class="o">=</span> <span class="m">1</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="k">case</span> <span class="nv">$1</span> in
+        -h<span class="p">|</span>--help   <span class="o">)</span> <span class="nb">echo</span> -e <span class="s2">&quot;</span><span class="nv">$USAGE</span><span class="s2">&quot;</span>
+        <span class="nb">exit</span> <span class="m">0</span><span class="p">;;</span>
+        *           <span class="o">)</span> <span class="nb">echo</span> -e <span class="s2">&quot;\n  Invalid command argument\n&quot;</span>
+        <span class="nb">exit</span> <span class="m">1</span><span class="p">;;</span>
+    <span class="k">esac</span>
+<span class="k">fi</span>
+
+dmenu_run -b -i -nb <span class="s1">&#39;#151617&#39;</span> -nf <span class="s1">&#39;#FF9C00&#39;</span> -sb <span class="s1">&#39;#FF9C00&#39;</span> -sf <span class="s1">&#39;#151617&#39;</span> -fn <span class="s1">&#39;monofur for Powerline Regular-10&#39;</span>
+</pre></div>
+</td></tr></table>
+
+<p>Se ve de la siguiente manera:</p>
+<p><img alt="Mordor, dmenu" src="http://i.imgur.com/Vcfn1uG.png"></p>
+<blockquote>
+<blockquote>
+<p>Saludos, y espero vayan dejando de lado el mouse y ganando velocidad al lanzar sus aplicaciones.</p>
+</blockquote>
+</blockquote>
+          </div>
+          <div class="post-comments">
+            <h4>Comentarios</h4>
+          </div>
+      </div>
+    </div>
+    <footer class="footer-wrapper">
+      <div class="container">
+        <div class="footer">
+          <a href="../../archives">Archivos</a>
+          <a href="../../">RSS</a>
+  
+          <a href="http://twitter.com/nigrobyte">twitter</a>
+        </div>
+        <div class="footer">
+          <span id="years">2008-2014</span> &copy; Las escrituras del Nigromancer | Powered by <a href="http://getpelican.com">Pelican</a>| <a href="http://creativecommons.org/licenses/by/4.0/">CC BY</a>
+        </div>
+      </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> 
+    <script src="../../theme/js/lightbox-2.6.min.js"></script>
+    <script src="../../theme/js/lazystrap.js"></script>
+</body>
+</html>
