@@ -16,8 +16,7 @@ No me sorprende que la NSA ha tomado esta medida. Para empezar, hay una larga y 
 El Internet es un brillante ejemplo de ello. Y comprometerse con expertos en tecnología a través de Github es una gran manera de sanear su imagen, y potencialmente reclutar talento.
 
 Si deseas entrar al perfil de Github de la NSA  presiona [aquí](https://github.com/nationalsecurityagency).
-
-![NSA](/theme/img/post/nsagithub.png)
+<img src='/theme/img/post/nsagithub.png' class='responsive-image'>
 
 *fuente:* http://telegra.ph/Si-Ahora-la-NSA-tiene-una-cuenta-en-Github-06-19
 

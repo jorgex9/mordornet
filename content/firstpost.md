@@ -7,6 +7,6 @@ Bienvenidos sean visitantes del ciberespacio a las mazmorras de Mordor, un lugar
 
 > Un script para gobernarlos a todos. Un script para encontrarlos, un script para atraerlos a todos y atarlos en las tinieblas.
 
+<img src="https://media.giphy.com/media/fbBDhlw5pPAYg/giphy.gif" class="responsive-image"/>
 
-![nigromancer](https://media.giphy.com/media/fbBDhlw5pPAYg/giphy.gif)
 

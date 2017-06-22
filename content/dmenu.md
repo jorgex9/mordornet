@@ -71,8 +71,10 @@ dmenu_run -b -i -nb '#151617' -nf '#FF9C00' -sb '#FF9C00' -sf '#151617' -fn 'mon
 ```
 Se ve de la siguiente manera:
 
-![Mordor, dmenu](http://i.imgur.com/Vcfn1uG.png)
+<img src="http://i.imgur.com/Vcfn1uG.png"  class="responsive-image"/>
 
->> Saludos, y espero vayan dejando de lado el mouse y ganando velocidad al lanzar sus aplicaciones.
+Por si no lo notan, es el lanzador que se ve en la parte de abajo del escritorio. XD
+
+> Saludos, y espero vayan dejando de lado el mouse y ganando velocidad al lanzar sus aplicaciones.
 
 
