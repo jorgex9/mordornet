@@ -63,7 +63,7 @@ SITESUBTITLE = "Las escrituras del Nigromancer"
 SITEKEYWORDS = "GNU Linux Debian Mordor Music Cine Geek Bass"
 SITEURL = ""
 SOCIAL = (('twitter', 'http://twitter.com/nigrobyte'),)
-GITHUB_USERNAME = "nigromancer"
+GITHUB_USERNAME = ""
 BLOG_START_YEAR = "2017"
 COMMENT_SYSTEM_ID = ""
 
