@@ -3,7 +3,7 @@ Date: 2017-06-19 21:33
 Category: About
 Tags: dmenu, debian
 
-Hay mucha genete que prefiere tener lanzadores a un click de distancia, pero para muchos (como yo) alejarse del teclado al mouse implica un esfuerzo extra. Asi que a la hora de lanzar una aplicación lo que prefiero es usar **dmenu**.
+Hay mucha gente que prefiere tener lanzadores a un click de distancia, pero para muchos (como yo) alejarse del teclado al mouse implica un esfuerzo extra. Así que a la hora de lanzar una aplicación lo que prefiero es usar **dmenu**.
 
 dmenu es rapido, dinamico y ligero para entornos X, originalmente diseñado para [dwm](http://dwm.suckless.org/) (un manejador de ventanas que espero pronto escribir sobre el, es especial porque he probado dwmX y me entusiasma mucho).  
 
@@ -15,8 +15,8 @@ En la familia de debian dmenu esta incluido en los paquetes suckless-tools
 ```
 
 ## Configuración
-Una vez instalado es recomendable configurar teclas de acceso rapido a dmenu. Esto puede hacerlo via las configuraciones de su entorno grafico (Gnome, KDE, XFCE, Openbox, etc). En mi caso como uso Openbox la configuracion la hago en el archivo ** ~.config/openbox/rc.xml**
-Mas presizamente de esta manera:
+Una vez instalado es recomendable configurar teclas de acceso rápido a dmenu. Esto puede hacerlo vía las configuraciones de su entorno gráfico (Gnome, KDE, XFCE, Openbox, etc). En mi caso como uso Openbox la configuración la hago en el archivo ** ~.config/openbox/rc.xml**
+Mas precisamente de esta manera:
 
 ```
 <keybind key="A-F3">
@@ -30,7 +30,7 @@ Mas presizamente de esta manera:
     </keybind>
 
 ```
-Como ven, el comando que ejecuta apunta a ** ~/.config/dmenu/dmenu-bind.sh**, este es un script donde he configurado las opciones de como se lanzara mi dmenu. Entra alguanas de las opciones que pueden configurar son: Color de letra, color de fondo, tipo de letra, color de seleccion, posicion, etc.
+Como ven, el comando que ejecuta apunta a ** ~/.config/dmenu/dmenu-bind.sh**, este es un script donde he configurado las opciones de como se lanzara mi dmenu. Entre algunas de las opciones que pueden configurar son: Color de letra, color de fondo, tipo de letra, color de selección, posición, etc.
 Ahora les muestro mi configuración:
 
 ```
