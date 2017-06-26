@@ -65,10 +65,10 @@ SITEURL = ""
 SOCIAL = (('twitter', 'http://twitter.com/nigrobyte'),)
 GITHUB_USERNAME = "nigromancer"
 BLOG_START_YEAR = "2017"
-COMMENT_SYSTEM_ID = ""
+COMMENT_SYSTEM_ID = "92639"
 
 PLUGIN_PATHS = ['../pelican-plugins']
-PLUGINS = [ 'tipue_search']
+PLUGINS = [ 'tipue_search', 'lightbox']
 
 TEMPLATE_PAGES = {
         'search.html': 'search.html',
