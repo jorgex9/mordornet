@@ -41,7 +41,7 @@
             <a href="../../tag/debian"><b>#</b>debian</a>
           </div>
           <div class="post-content">
-            <p>Hay mucha genete que prefiere tener lanzadores a un click de distancia, pero para muchos (como yo) alejarse del teclado al mouse implica un esfuerzo extra. Asi que a la hora de lanzar una aplicación lo que prefiero es usar <strong>dmenu</strong>.</p>
+            <p>Hay mucha gente que prefiere tener lanzadores a un click de distancia, pero para muchos (como yo) alejarse del teclado al mouse implica un esfuerzo extra. Así que a la hora de lanzar una aplicación lo que prefiero es usar <strong>dmenu</strong>.</p>
 <p>dmenu es rapido, dinamico y ligero para entornos X, originalmente diseñado para <a href="http://dwm.suckless.org/">dwm</a> (un manejador de ventanas que espero pronto escribir sobre el, es especial porque he probado dwmX y me entusiasma mucho).  </p>
 <h2>Instalación</h2>
 <p>En la familia de debian dmenu esta incluido en los paquetes suckless-tools</p>
@@ -50,8 +50,8 @@
 
 
 <h2>Configuración</h2>
-<p>Una vez instalado es recomendable configurar teclas de acceso rapido a dmenu. Esto puede hacerlo via las configuraciones de su entorno grafico (Gnome, KDE, XFCE, Openbox, etc). En mi caso como uso Openbox la configuracion la hago en el archivo <strong> ~.config/openbox/rc.xml</strong>
-Mas presizamente de esta manera:</p>
+<p>Una vez instalado es recomendable configurar teclas de acceso rápido a dmenu. Esto puede hacerlo vía las configuraciones de su entorno gráfico (Gnome, KDE, XFCE, Openbox, etc). En mi caso como uso Openbox la configuración la hago en el archivo <strong> ~.config/openbox/rc.xml</strong>
+Mas precisamente de esta manera:</p>
 <div class="highlight"><pre><span></span><span class="nt">&lt;keybind</span> <span class="na">key=</span><span class="s">&quot;A-F3&quot;</span><span class="nt">&gt;</span>
       <span class="nt">&lt;action</span> <span class="na">name=</span><span class="s">&quot;Execute&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;startupnotify&gt;</span>
@@ -64,7 +64,7 @@ Mas presizamente de esta manera:</p>
 </pre></div>
 
 
-<p>Como ven, el comando que ejecuta apunta a <strong> ~/.config/dmenu/dmenu-bind.sh</strong>, este es un script donde he configurado las opciones de como se lanzara mi dmenu. Entra alguanas de las opciones que pueden configurar son: Color de letra, color de fondo, tipo de letra, color de seleccion, posicion, etc.
+<p>Como ven, el comando que ejecuta apunta a <strong> ~/.config/dmenu/dmenu-bind.sh</strong>, este es un script donde he configurado las opciones de como se lanzara mi dmenu. Entre algunas de las opciones que pueden configurar son: Color de letra, color de fondo, tipo de letra, color de selección, posición, etc.
 Ahora les muestro mi configuración:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
