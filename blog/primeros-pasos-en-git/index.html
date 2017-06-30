@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Primeros pasos en Git - Mordor-lab</title>
+      <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../../theme/css/lazystrap.css" rel="stylesheet">
+    <link href="../../theme/css/pygments.css" rel="stylesheet">
+    <link href="../../theme/css/lightbox.css" rel="stylesheet">
+    <link rel="shortcut icon" href="../../theme/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="../../theme/favicon.png" type="image/x-icon" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <meta name="description" content="Las escrituras del Nigromancer" />
+
+    <meta name="keywords" content="GNU Linux Debian Mordor Music Cine Geek Bass,git,github" />
+</head>
+<body onload="set_years(2017)">
+    <div class="page">
+      <div class="header">
+        <a href="../..">
+          <img src="../../theme/img/logo.png" alt="lazycoder.ru" />
+        </a>
+        <div class="navbar-desc">
+          Las escrituras del Nigromancer
+        </div>
+      </div>
+      <div class="container">
+          <div class="post-date pull-right">30.06.2017</div>
+          <h2 class="post-header">Primeros pasos en Git</h2>
+          <div class="post-metadata pull-right">
+            <a href="../../tag/git"><b>#</b>git</a>
+            <a href="../../tag/github"><b>#</b>github</a>
+          </div>
+          <div class="post-content">
+            <p>Git es un software de control de versiones diseñado por Linus Torvalds, pensando en la eficiencia y la confiabilidad del mantenimiento de versiones de aplicaciones cuando estas tienen un gran número de archivos de código fuente. </p>
+<h1>Instalación en Debian</h1>
+<p>Para la instalación solo es necesario el siguiente comando, dado que git se encuentra en repositorios.</p>
+<div class="highlight"><pre><span></span> # apt-get install git 
+</pre></div>
+
+
+<p>luego realizar configuraciones globales para el usuario:</p>
+<div class="highlight"><pre><span></span>$ git config --global user.name <span class="s2">&quot;John Doe&quot;</span>
+$ git config --global user.email johndoe@example.com
+</pre></div>
+
+
+<p>Agregar tu herrmaineta pare resolver conflictos: Git acepta kdiff3, tkdiff, meld, xxdiff, emerge, vimdiff, gvimdiff, ecmerge, y opendiff
+en mi caso:</p>
+<div class="highlight"><pre><span></span>$ git config --global merge.tool kdiff3
+</pre></div>
+
+
+<p>Si quieres revizar tus configuraciones: </p>
+<div class="highlight"><pre><span></span>git config --list
+</pre></div>
+
+
+<h1>Crear tu repositorio local</h1>
+<p>Creamos un directorio donde se alojara nuestro repositorio
+ejemplo "mirepogit" : </p>
+<div class="highlight"><pre><span></span>$ mkdir mirepogit
+</pre></div>
+
+
+<p>y nos movemos a ella: </p>
+<div class="highlight"><pre><span></span>$ <span class="nb">cd</span> mirepogit
+</pre></div>
+
+
+<p>alli inicializamos el repositorio: </p>
+<div class="highlight"><pre><span></span>$ git init
+</pre></div>
+
+
+<p>Bien con esto se crean los archivos de configuraciones internos del repositorio local.
+Podemos empezar a trabajar en el ejemplo creando unos archivos:  </p>
+<div class="highlight"><pre><span></span>$ touch holamundo
+</pre></div>
+
+
+<p>Agregamos este archivo al repositorio:</p>
+<div class="highlight"><pre><span></span>$ git add holamundo 
+</pre></div>
+
+
+<p>podemos agregar recursivamente los archivos de un directorio, si es que se lo indicamos 
+ejemplo: </p>
+<div class="highlight"><pre><span></span>$ git add path_directorio 
+</pre></div>
+
+
+<p>Una forma de agregar todos los archivos del directorio en el que estamos parados es: </p>
+<div class="highlight"><pre><span></span>$ git add . 
+</pre></div>
+
+
+<p>Ahora debemos commitiar el los cambios: </p>
+<div class="highlight"><pre><span></span>$ git commit -m <span class="s2">&quot;este es el mensaje que se le añade al commit&quot;</span>
+</pre></div>
+
+
+<p>Con esto ya estamos trabajando localmente</p>
+<h1>Enlazar mi repositori local con uno externo (ejemplo GitHub)</h1>
+<p>Bien primero que nada tenemos que crearnos una cuenta en github  (también puede ser en GitLab, Bitbucket o algún otro privado) . Cuando ya tenemos la cuenta creamos el repositorio vamos a obtener varios metodos para clonar este repositorio con nuestro repositorio local. Optamos por hacerlo a través de SSH.
+ejemplo:  <code>`git@github.com:usuario/mirepogit</code></p>
+<blockquote>
+<p>nota: primeramente debemos crear una clave SSH en nuestra computadora y añadir esta clave también a la configuración en github. En nuestra consola hacemos: </p>
+</blockquote>
+<div class="highlight"><pre><span></span>$ ssh-keygen
+</pre></div>
+
+
+<p>De este modo creamos una clave ssh, preferentemente es recomendable ponerle contraseña al momento de crearla. En la configuraciones de cuenta de GitHub agregamos nuestra clave, ejemplo:  </p>
+<div class="highlight"><pre><span></span>$ cat ~/.ssh/id_rsa.pub 
+</pre></div>
+
+
+<p>y nos devuelve algo similar a esto: </p>
+<div class="highlight"><pre><span></span>ssh-rsa AAAAB3NzaC1yc2EAAAA345345ABAAABAQCyW40wyyXVboiQCEbBNjhi3iBXAUMEuUHVOGMVA9Sk3ioeeuWG5FoiSne
+uifFvKfXRild1fMXj0vCtRDJVSVS9/Cz1EQECf5ju9eHGqF+pMviifpJxfjirFo3rIy4dx7vB8FREsdfazdldQ5Crb9ijbbeaQ
+95VrnEcSfJjJwGZWlz4lO+m5En3E509l5Nxax2+HVYjHyIIs7nTLl+bVMFjIRgN9nEyrmDVIVtuCm7ZKWvywwldIqDfTq3LR01
+/gl5I9HRyMRAPiiTPZ55AWcNomtMJxFylknT9d8SvlfYmIB81V2XTZ/asdasda43JvVn3jOZoA7ABG90Qx6b00yYD 
+usuario@host
+</pre></div>
+
+
+<p>Bien ahora debemos crear un nuevo repositorio en github, por ejemplo con el mismo nombre "mirepogit", una vez creado podemos obtener en la parte inferior derecha nuestro acceso por SSH; ejemplo "git@github.com:usuario/mirepogit",con este dato procedemos a enlazarlo  con nuestro repositorio local. Para ello nos paramos en la raíz de nuestro proyecto. En este ejemplo es el directorio "mirepogit" que creamos anteriormente y hacemos:</p>
+<div class="highlight"><pre><span></span>$ git remote add origin git@github.com:usuario/mirepogit 
+</pre></div>
+
+
+<p>Si todo ha salido bien con las claves publicas aquí solo nos pide la clave de nuestra llave SSH
+ahora podemos traer las cosas desde nuestro repositorio en gitHub: </p>
+<div class="highlight"><pre><span></span> $ git pull origin master
+</pre></div>
+
+
+<p>Con esto git empieza a trabajar y nos copia las cosas que tengamos en nuestro repositorio en gitHub.</p>
+<p>Ahora vamos a hacer lo inverso agregando las cosas desde el repositorio  local al repositorio  en gitHub</p>
+<div class="highlight"><pre><span></span>$ git push origin master
+</pre></div>
+
+
+<p>Con esto ahora podemos ver en nuestro explorador de repositorio en gitHub que nuestros archivos que fueron adheridos y commitiados localmente ahora están en gitHub.</p>
+          </div>
+          <div class="post-comments">
+            <h4>Comentarios</h4>
+<!-- place code of your favour comment system here -->
+<div id="hypercomments_widget"></div>
+<script type="text/javascript">
+_hcwp = window._hcwp || [];
+_hcwp.push({widget:"Stream", widget_id: 92639 });
+(function() {
+if("HC_LOAD_INIT" in window)return;
+HC_LOAD_INIT = true;
+var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/92639/"+lang+"/widget.js";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(hcc, s.nextSibling);
+})();
+</script>
+          </div>
+      </div>
+    </div>
+    <footer class="footer-wrapper">
+      <div class="container">
+        <div class="footer">
+          <a href="../../archives">Archivos</a>
+          <a href="../../">RSS</a>
+  
+          <a href="http://twitter.com/nigrobyte">twitter</a>
+        </div>
+        <div class="footer">
+          <span id="years">2008-2014</span> &copy; Las escrituras del Nigromancer | Powered by <a href="http://getpelican.com">Pelican</a>| <a href="http://creativecommons.org/licenses/by/4.0/">CC BY</a>
+        </div>
+      </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> 
+    <script src="../../theme/js/lightbox-2.6.min.js"></script>
+    <script src="../../theme/js/lazystrap.js"></script>
+</body>
+</html>
