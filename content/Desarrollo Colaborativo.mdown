@@ -1,0 +1,56 @@
+Title: Desarrollo Colaborativo - Git
+Date: 2017-07-02 01:04
+Category: About
+Tags: git, Software Libre, Desarrollo Colaborativo
+
+
+En vista de seguir compartiendo un poco mas sobre Git, aquí les comparto una presentación que tuve el agrado de dar en las Primeras Jornadas de Software Libre que se desarrollaron en La Quiaca. 
+
+
+<iframe src="https://archive.org/stream/ControlDeVersionesYDesarrolloColaborativo?ui=embed" width="600" height="430" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe>
+
+## Primera Parte
+
+En esta charla se planteo la problemática del versionado. Se presento a Git como una solución. Se hizo una comparación respecto a otros sistemas de versiones "Distribuido vs Centralizado". 
+
+Se mostro la forma de instalar Git en varas distribuciones GNU/Linux. 
+ 
+Luego entramos a describir la formas de trabajo con Git, haciendo diferencia entre el "lugar" en donde encontramos un archivo/directorio dentro del sistema de versionado. Pasando desde el directorio de trabajo >> Staging Area >> Repositorio Local. Usamos una analogía de un restaurante.
+
+Se trato el tema del trabajo con Ramas y la forma en que estas fomentan a la experimentación y creatividad. Y terminando con buenas practicas en el manejo de ramas.
+
+## Segunda Parte 
+
+En la segunda parte entramos a hablar sobre el Git y el desarrollo Colaborativo, en el cual agregamos el repositorio remoto en nuestro esquema de trabajo.
+
+Para visualizar el trabajo colaborativo, presente un video de un mes de trabajo del proyecto Chamicero usando [Gource](http://gource.io/)
+
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/OrGE_1k4OuE?controls=1">
+</iframe>
+
+Seguidamente se hablo sobre los conflictos, por qué suceden y como tratarlos. Mostramos como los reconocemos en el código y algunas herramientas que nos permiten ver las diferencias.
+
+Plantamos la necesidad de ignorar archivos, para que estos no se versiones. Haciendo uso de **.gitignore** y algunos ejemplos de uso. También para este tema se sugirió el sitio [gitignore.io](https://www.gitignore.io/) el cual permite de una manera sencilla generar archivos .gitignore para nuestros proyectos, según sistema operativo, IDEs o lenguajes de programación. 
+> Gitignore.io cuenta también cuenta con una herramienta CLI (*Interfaz de linea de comandos*) para generar nuestro .gitignore. Mas info [aquí](https://www.gitignore.io/docs#-install-command-line)
+
+Como esquema final, se presento un esquema de Repositorio remoto y dos desarrolladores. En este podemos ver también los comandos básicos para que los desarrolladores "A" y "B" trabajen. Se presentaron dos alternativas conocidas de servicios que brindan repositorios remotos [Github](https://github.com/) y [GitLab](https://gitlab.com), dos grandes alternativas a la hora de gestionar repositorios remotos.
+
+Como tema final. se hablo sobre Forks, los cuales son una bifurcación independiente, es decir, hace una copia exacta en crudo del repositorio original pero con URL distintas. Se plantearon las ventajas y el gran beneficio de esta forma de trabajo que permite a los desarrolladores a contribuir de forma segura.
+
+Para no dejar todo del lado de la consola, mostramos dos alternativas libres de herramientas GUI (interfaz de usuario gráfica) de git, [gitk](https://git-scm.com/docs/gitk) y [giggle](https://wiki.gnome.org/Apps/giggle/)
+
+Con eso llegamos al fin de la presentación y les dejo la invitación a preguntas, sugerencias o que nos cuenten su experiencia con git. \o/
+
+## Extra
+
+Para terminar quiero compartirles un gist con un pequeño resumen de comandos básicos que a mi me sirvieron mucho y son una buena chuleta. 
+
+<script src="https://gist.github.com/nigromancer/8618781.js"></script>
+
+
+> Fin de la transmisión
+
+<img src="http://orig09.deviantart.net/2aa3/f/2009/010/e/c/sauron_by_johnnyslowhand.jpg" class="responsive-image">
+
+

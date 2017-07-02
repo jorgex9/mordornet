@@ -77,4 +77,5 @@ Por si no lo notan, es el lanzador que se ve en la parte de abajo del escritorio
 
 > Saludos, y espero vayan dejando de lado el mouse y ganando velocidad al lanzar sus aplicaciones.
 
+<img src="https://upload.wikimedia.org/wikipedia/en/0/0c/The_Mouth_of_Sauron.jpg" class="responsive-image">
 

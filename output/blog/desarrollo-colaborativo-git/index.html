@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Desarrollo Colaborativo - Git - Mordor-lab</title>
+      <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../../theme/css/lazystrap.css" rel="stylesheet">
+    <link href="../../theme/css/pygments.css" rel="stylesheet">
+    <link href="../../theme/css/lightbox.css" rel="stylesheet">
+    <link rel="shortcut icon" href="../../theme/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="../../theme/favicon.png" type="image/x-icon" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <meta name="description" content="Las escrituras del Nigromancer" />
+
+    <meta name="keywords" content="GNU Linux Debian Mordor Music Cine Geek Bass,git,Software Libre,Desarrollo Colaborativo" />
+</head>
+<body onload="set_years(2017)">
+    <div class="page">
+      <div class="header">
+        <a href="../..">
+          <img src="../../theme/img/logo.png" alt="lazycoder.ru" />
+        </a>
+        <div class="navbar-desc">
+          Las escrituras del Nigromancer
+        </div>
+      </div>
+      <div class="container">
+          <div class="post-date pull-right">02.07.2017</div>
+          <h2 class="post-header">Desarrollo Colaborativo - Git</h2>
+          <div class="post-metadata pull-right">
+            <a href="../../tag/git"><b>#</b>git</a>
+            <a href="../../tag/software-libre"><b>#</b>Software Libre</a>
+            <a href="../../tag/desarrollo-colaborativo"><b>#</b>Desarrollo Colaborativo</a>
+          </div>
+          <div class="post-content">
+            <p>En vista de seguir compartiendo un poco mas sobre Git, aquí les comparto una presentación que tuve el agrado de dar en las Primeras Jornadas de Software Libre que se desarrollaron en La Quiaca. </p>
+<iframe src="https://archive.org/stream/ControlDeVersionesYDesarrolloColaborativo?ui=embed" width="600" height="430" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe>
+
+<h2>Primera Parte</h2>
+<p>En esta charla se planteo la problemática del versionado. Se presento a Git como una solución. Se hizo una comparación respecto a otros sistemas de versiones "Distribuido vs Centralizado". </p>
+<p>Se mostro la forma de instalar Git en varas distribuciones GNU/Linux. </p>
+<p>Luego entramos a describir la formas de trabajo con Git, haciendo diferencia entre el "lugar" en donde encontramos un archivo/directorio dentro del sistema de versionado. Pasando desde el directorio de trabajo &gt;&gt; Staging Area &gt;&gt; Repositorio Local. Usamos una analogía de un restaurante.</p>
+<p>Se trato el tema del trabajo con Ramas y la forma en que estas fomentan a la experimentación y creatividad. Y terminando con buenas practicas en el manejo de ramas.</p>
+<h2>Segunda Parte</h2>
+<p>En la segunda parte entramos a hablar sobre el Git y el desarrollo Colaborativo, en el cual agregamos el repositorio remoto en nuestro esquema de trabajo.</p>
+<p>Para visualizar el trabajo colaborativo, presente un video de un mes de trabajo del proyecto Chamicero usando <a href="http://gource.io/">Gource</a></p>
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/OrGE_1k4OuE?controls=1">
+</iframe>
+
+<p>Seguidamente se hablo sobre los conflictos, por qué suceden y como tratarlos. Mostramos como los reconocemos en el código y algunas herramientas que nos permiten ver las diferencias.</p>
+<p>Plantamos la necesidad de ignorar archivos, para que estos no se versiones. Haciendo uso de <strong>.gitignore</strong> y algunos ejemplos de uso. También para este tema se sugirió el sitio <a href="https://www.gitignore.io/">gitignore.io</a> el cual permite de una manera sencilla generar archivos .gitignore para nuestros proyectos, según sistema operativo, IDEs o lenguajes de programación. </p>
+<blockquote>
+<p>Gitignore.io cuenta también cuenta con una herramienta CLI (<em>Interfaz de linea de comandos</em>) para generar nuestro .gitignore. Mas info <a href="https://www.gitignore.io/docs#-install-command-line">aquí</a></p>
+</blockquote>
+<p>Como esquema final, se presento un esquema de Repositorio remoto y dos desarrolladores. En este podemos ver también los comandos básicos para que los desarrolladores "A" y "B" trabajen. Se presentaron dos alternativas conocidas de servicios que brindan repositorios remotos <a href="https://github.com/">Github</a> y <a href="https://gitlab.com">GitLab</a>, dos grandes alternativas a la hora de gestionar repositorios remotos.</p>
+<p>Como tema final. se hablo sobre Forks, los cuales son una bifurcación independiente, es decir, hace una copia exacta en crudo del repositorio original pero con URL distintas. Se plantearon las ventajas y el gran beneficio de esta forma de trabajo que permite a los desarrolladores a contribuir de forma segura.</p>
+<p>Para no dejar todo del lado de la consola, mostramos dos alternativas libres de herramientas GUI (interfaz de usuario gráfica) de git, <a href="https://git-scm.com/docs/gitk">gitk</a> y <a href="https://wiki.gnome.org/Apps/giggle/">giggle</a></p>
+<p>Con eso llegamos al fin de la presentación y les dejo la invitación a preguntas, sugerencias o que nos cuenten su experiencia con git. \o/</p>
+<h2>Extra</h2>
+<p>Para terminar quiero compartirles un gist con un pequeño resumen de comandos básicos que a mi me sirvieron mucho y son una buena chuleta. </p>
+<script src="https://gist.github.com/nigromancer/8618781.js"></script>
+
+<blockquote>
+<p>Fin de la transmisión</p>
+</blockquote>
+<p><img src="http://orig09.deviantart.net/2aa3/f/2009/010/e/c/sauron_by_johnnyslowhand.jpg" class="responsive-image"></p>
+          </div>
+          <div class="post-comments">
+            <h4>Comentarios</h4>
+<!-- place code of your favour comment system here -->
+<div id="hypercomments_widget"></div>
+<script type="text/javascript">
+_hcwp = window._hcwp || [];
+_hcwp.push({widget:"Stream", widget_id: 92639 });
+(function() {
+if("HC_LOAD_INIT" in window)return;
+HC_LOAD_INIT = true;
+var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/92639/"+lang+"/widget.js";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(hcc, s.nextSibling);
+})();
+</script>
+          </div>
+      </div>
+    </div>
+    <footer class="footer-wrapper">
+      <div class="container">
+        <div class="footer">
+          <a href="../../archives">Archivos</a>
+          <a href="../../">RSS</a>
+  
+          <a href="http://twitter.com/nigrobyte">twitter</a>
+        </div>
+        <div class="footer">
+          <span id="years">2008-2014</span> &copy; Las escrituras del Nigromancer | Powered by <a href="http://getpelican.com">Pelican</a>| <a href="http://creativecommons.org/licenses/by/4.0/">CC BY</a>
+        </div>
+      </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> 
+    <script src="../../theme/js/lightbox-2.6.min.js"></script>
+    <script src="../../theme/js/lazystrap.js"></script>
+</body>
+</html>

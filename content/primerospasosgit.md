@@ -114,3 +114,5 @@ $ git push origin master
 
 Con esto ahora podemos ver en nuestro explorador de repositorio en gitHub que nuestros archivos que fueron adheridos y commitiados localmente ahora están en gitHub.
 
+
+<img src="http://img05.deviantart.net/c8c8/i/2004/06/c/3/sauron_scene.jpg" class="responsive-image">
