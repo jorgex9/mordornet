@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Hola Mundo! Ofuscado - Mordor-lab</title>
+      <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../../theme/css/lazystrap.css" rel="stylesheet">
+    <link href="../../theme/css/pygments.css" rel="stylesheet">
+    <link href="../../theme/css/lightbox.css" rel="stylesheet">
+    <link rel="shortcut icon" href="../../theme/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="../../theme/favicon.png" type="image/x-icon" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <meta name="description" content="Las escrituras del Nigromancer" />
+
+    <meta name="keywords" content="GNU Linux Debian Mordor Music Cine Geek Bass,php,ofuscar,código ofuscado" />
+</head>
+<body onload="set_years(2017)">
+    <div class="page">
+      <div class="header">
+        <a href="../..">
+          <img src="../../theme/img/logo.png" alt="lazycoder.ru" />
+        </a>
+        <div class="navbar-desc">
+          Las escrituras del Nigromancer
+        </div>
+      </div>
+      <div class="container">
+          <div class="post-date pull-right">03.07.2017</div>
+          <h2 class="post-header">Hola Mundo! Ofuscado</h2>
+          <div class="post-metadata pull-right">
+            <a href="../../tag/php"><b>#</b>php</a>
+            <a href="../../tag/ofuscar"><b>#</b>ofuscar</a>
+            <a href="../../tag/codigo-ofuscado"><b>#</b>código ofuscado</a>
+          </div>
+          <div class="post-content">
+            <p>Cuando estamos en etapa de desarrollo, una de las mejores y buenas practicas es hacer nuestro código lo mas legible posible (buena identación, respetar las formas de nombrar variables, métodos y clases) ademas de acompañar de buenos comentarios. Esto hace que con el paso del tiempo y el cambio de 
+desarrolladores, el código sea entendible y mantenible con facilidad.</p>
+<p>Pero también podemos pensar en hacer todo lo contrario "Ofuscar nuestro código , es decir, el código ofuscado es aquel tan intrincado, enredado, enrevesado y confuso que resulta prácticamente imposible entenderlo incluso para quien lo escribió  Esto se usa mucho en el desarrollo de software malicioso (malware), generadores de spam y sitios web fraudulentos.</p>
+<h2>Veamos un caso practico en C++</h2>
+<p>Un ejemplo básico es llamar a las variables y funciones con palabras reservadas mas algún símbolo. Entonces definimos en <strong>C++</strong> una variable del tipo int de nombre <strong>int_</strong></p>
+<div class="highlight"><pre><span></span>    <span class="kt">int</span> <span class="n">_int</span><span class="p">;</span>
+</pre></div>
+
+
+<p>Ahora veamos la forma de escribir una función en C++ de nombre _int que recibe como parámetro un entero y devuelve un valor del tipo long, que siempre va a ser cero.</p>
+<div class="highlight"><pre><span></span>    <span class="kt">long</span> <span class="kt">int</span> <span class="nf">_int</span><span class="p">(</span><span class="kt">int</span> <span class="n">int_</span><span class="p">){</span><span class="k">return</span> <span class="n">int_</span><span class="o">-</span><span class="n">int_</span><span class="p">};</span>
+</pre></div>
+
+
+<h2>Ahora vamos a ver mas de codigo ofuscad opero en PHP :)</h2>
+<p>el clasico <em>Hola Mundo!</em>: </p>
+<div class="highlight"><pre><span></span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="s1">&#39;Hola Mundo!&#39;</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="x">;</span>
+</pre></div>
+
+
+<p>Ofuscar transformando a caracteres en octal. Se antepone \ para identificar un caracter octal </p>
+<div class="highlight"><pre><span></span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="s2">&quot;</span><span class="se">\110\157\154\141\40\155\165\156\144\157\41</span><span class="s2">&quot;</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="x">;</span>
+</pre></div>
+
+
+<p>Ofuscar transformando a caracteres hexadecimales. Se antepone \x para identificar un caracter hexadecimal.</p>
+<div class="highlight"><pre><span></span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="s2">&quot;</span><span class="se">\x48\x6f\x6c\x61\x20\x6d\x75\x6e\x64\x6f\x21</span><span class="s2">&quot;</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+
+
+<p>Funciones recomendadas para realizar la transformación</p>
+<ul>
+<li><code>decoct(ord("A"))</code> : <em>decoct</em> devuelve una cadena que contiene una representación octal del argumento dado y <em>ord</em> devuelve el valor ASCII de un caracter</li>
+<li><code>dechex(ord("A"))</code> : <em>dechex</em> devuelve una cadena que contiene una representación hexadecimal del argumento dado.</li>
+</ul>
+<p>Entonces también podemos usar una mezcla </p>
+<div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>  <span class="k">echo</span> <span class="s2">&quot;</span><span class="se">\110\x6f\154\x61\40\x6d\165\x6e\144\x6f\41</span><span class="s2">&quot;</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+
+
+<p>un paso mas. Cambiemos echo por la función printf y a esta por una variable
+veamos paso a paso...</p>
+<div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nb">printf</span> <span class="p">(</span><span class="s2">&quot;</span><span class="se">\110\x6f\154\x61\40\x6d\165\x6e\144\x6f\41</span><span class="s2">&quot;</span><span class="p">);</span>
+<span class="nv">$i8238im432</span> <span class="o">=</span> <span class="s2">&quot;printf&quot;</span><span class="p">;</span>
+<span class="nv">$i8238im432</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\110\x6f\154\x61\40\x6d\165\x6e\144\x6f\41</span><span class="s2">&quot;</span><span class="p">);</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+
+
+<p>y aun mas! vamos a comprimir nuestro código y cifrar en base64, para ello usaremos <code>gzdeflate</code> y <code>base64_encode</code>. Tengan en cuenta que aquí nuestro codigo debe ir sin las tags <code>&lt;?php  ?&gt;</code> </p>
+<div class="highlight"><pre><span></span><span class="cp">&lt;?php</span> <span class="nb">printf</span><span class="p">(</span><span class="nb">base64_encode</span><span class="p">(</span><span class="nb">gzdeflate</span><span class="p">(</span><span class="s1">&#39;printf(&quot;Hola Mundo!&quot;);&#39;</span><span class="p">)));</span> <span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+
+
+<p>esto nos devolverá nuestro código ofuscado</p>
+<div class="highlight"><pre><span></span>KyjKzCtJ01DyyM9JVPAtzUvJV1TStAYA
+</pre></div>
+
+
+<p>ahora lo vemos en ejecución</p>
+<div class="highlight"><pre><span></span><span class="cp">&lt;?php</span> <span class="k">eval</span> <span class="p">(</span><span class="nb">gzinflate</span><span class="p">(</span><span class="nb">base64_decode</span><span class="p">(</span><span class="s1">&#39;KyjKzCtJ01DyyM9JVPAtzUvJV1TStAYA&#39;</span><span class="p">)));</span> <span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+
+
+<p>Un poco mas y si cambiando de nombres las variables base64_decode, gzinflate y obtenemos nuestro Hola Mundo! mas ofuscado?</p>
+<div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$a07f983d5a12b4</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\142\x61\163\x65\66\x34\137\x64\145\x63\157\x64\145</span><span class="s2">&quot;</span><span class="p">;</span>
+<span class="nv">$a92384nasdkj3</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\147\172\151\156\146\154\141\164\145</span><span class="s2">&quot;</span><span class="p">;</span>
+<span class="k">eval</span><span class="p">(</span><span class="nv">$b92384nasdkj3</span><span class="p">(</span><span class="nv">$a07f983d5a12b4</span><span class="p">(</span><span class="s1">&#39;KyjKzCtJ01DyyM9JVPAtzUvJV1TStAYA&#39;</span><span class="p">)));</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+
+
+<p>Esto no termina allí, se puede ofuscar tanto como uno pueda. Existen torneos de ofuscación como el IOCCC (International Obfuscated C Code Contest) que es un torneo internacional de ofuscación en C. <a href="http://pastebin.com/sXXyUtEu">Aquí</a> pueden ver el código de un simulador de vuelo del torneo </p>
+<p>En la red podemos encontrar software que automatizan esta tarea, ofuscando tanto el código, como programa objeto. También existen lenguajes de programación llamados esotéricos como BrainFuck donde podemos ver obras de artes como esta versión del famoso juego de la vida! (juego del cual derivo el logo de la cultura hacker)
+<a href="http://pastebin.com/sXXyUtEu">htp://pastebin.com/pgKmeTeK</a></p>
+<p><strong>un Hola Mundo! interesante... no?</strong></p>
+<p><img src="https://nemeronwriter.com/wp-content/uploads/bfi_thumb/espada92-33kwgf0tnwi1npwu9dds0a.jpg" class="responsive-image"></p>
+          </div>
+          <div class="post-comments">
+            <h4>Comentarios</h4>
+<!-- place code of your favour comment system here -->
+<div id="hypercomments_widget"></div>
+<script type="text/javascript">
+_hcwp = window._hcwp || [];
+_hcwp.push({widget:"Stream", widget_id: 92639 });
+(function() {
+if("HC_LOAD_INIT" in window)return;
+HC_LOAD_INIT = true;
+var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/92639/"+lang+"/widget.js";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(hcc, s.nextSibling);
+})();
+</script>
+          </div>
+      </div>
+    </div>
+    <footer class="footer-wrapper">
+      <div class="container">
+        <div class="footer">
+          <a href="../../archives">Archivos</a>
+          <a href="../../">RSS</a>
+  
+          <a href="http://twitter.com/nigrobyte">twitter</a>
+        </div>
+        <div class="footer">
+          <span id="years">2008-2014</span> &copy; Las escrituras del Nigromancer | Powered by <a href="http://getpelican.com">Pelican</a>| <a href="http://creativecommons.org/licenses/by/4.0/">CC BY</a>
+        </div>
+      </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> 
+    <script src="../../theme/js/lightbox-2.6.min.js"></script>
+    <script src="../../theme/js/lazystrap.js"></script>
+</body>
+</html>
