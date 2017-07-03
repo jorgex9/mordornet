@@ -5,7 +5,10 @@ Tags: dmenu, debian
 
 Hay mucha gente que prefiere tener lanzadores a un click de distancia, pero para muchos (como yo) alejarse del teclado al mouse implica un esfuerzo extra. Así que a la hora de lanzar una aplicación lo que prefiero es usar **dmenu**.
 
-dmenu es rapido, dinamico y ligero para entornos X, originalmente diseñado para [dwm](http://dwm.suckless.org/) (un manejador de ventanas que espero pronto escribir sobre el, es especial porque he probado dwmX y me entusiasma mucho).  
+dmenu es rapido, dinamic
+
+
+o y ligero para entornos X, originalmente diseñado para [dwm](http://dwm.suckless.org/) (un manejador de ventanas que espero pronto escribir sobre el, es especial porque he probado dwmX y me entusiasma mucho).  
 
 ## Instalación
 En la familia de debian dmenu esta incluido en los paquetes suckless-tools
