@@ -11,7 +11,7 @@ Pero también podemos pensar en hacer todo lo contrario "Ofuscar nuestro código
 
 ## Veamos un caso practico en C++
 
-Un ejemplo básico es llamar a las variables y funciones con palabras reservadas mas algún símbolo. Entonces definimos en **C++** una variable del tipo int de nombre **int_**
+Un ejemplo básico es llamar a las variables y funciones con palabras reservadas mas algún símbolo. Entonces definimos en **C++** una variable del tipo int de nombre **_int**
 ```c++
     int _int;
 ```
