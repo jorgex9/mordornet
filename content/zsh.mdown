@@ -1,0 +1,117 @@
+Title: zsh tunning prompt!
+Date: 2017-07-18 16:40
+Category: About
+Tags: zsh, oh_my_zsh, Powerline
+
+# Los clicks mienten!
+
+Desde el momento que en que uno empieza a tirar las primeras lineas de comando, empieza a entender como funcionan las cosas, (bueno a un nivel mas granular) y empieza a pasar mas tiempo detrás de una terminal.
+Es por ello que contar con una *shell* en el que nos sentamos a gusto y nos brinde herramientas que nos ayuden con nuestras tareas es importante.
+
+<img src="https://i.imgur.com/ep93csx.png" class="responsive-image">
+
+## Zsh
+[Z shell](http://www.zsh.org/) (o simplemente zsh) es un potente intérprete de comandos para sistemas operativos de tipo Unix, como por ejemplo los BSD o GNU/Linux.1​ ​ La primera versión de zsh fue escrita por Paul Falstad en 1990, cuando era estudiante en la Universidad de Princeton.
+
+Zsh se diseñó para poder usarse interactivamente. Se le han incorporado muchas de las características principales de otras shells de Unix como, *bash*, *ksh*, o *tcsh* y además posee características propias originales.
+
+### Instalacion Zsh en Debian
+
+La instalacion es muy simple dado que Zsh se encuentra en repositorio
+```
+sudo apt-get install zsh
+```
+
+Ahora nos queda configurar para que sea nuestra shell por defecto, para ello usamos el comando **chsh**, el cual lo lanzamos y nos va a solicitar que les pasemos el path de la shell que queremos usar. El path de zsh es  **/usr/bin/zsh**
+
+ejemplo de uso de chsh:
+
+```
+chsh -s
+Contraseña: 
+Cambiando la consola de acceso para nigro8b
+Introduzca el nuevo valor, o pulse INTRO para usar el valor predeterminado
+	Consola de acceso [/usr/bin/zsh]:
+```
+
+* Themes: [https://github.com/robbyrussell/oh-my-zsh/wiki/Themes](https://github.com/robbyrussell/oh-my-zsh/wiki/Themes)
+* Plugins: [https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins)
+
+> Archivo de configuracion de Zsh:  ~/.zshrc
+## Oh My Zsh
+
+[Oh my Zsh!](http://ohmyz.sh/) es una herramienta que nos permite aplicar temas a nuestro prompt y agregar diversos plugins a nuestra shell Zsh. Los temas suelen tener diferente tipo de información integrada, como por ejemplo información del repositorio Git en el que nos encontramos (si es que usamos Git, de no ser así no aparecerá nada) y los plugins suelen contener algunos alias útiles que nos ahorramos de configurar.
+
+<img src="https://camo.githubusercontent.com/5c385f15f3eaedb72cfcfbbaf75355b700ac0757/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6f686d797a73682f6f682d6d792d7a73682d6c6f676f2e706e67" class="responsive-image">
+
+
+### Instalación de Oh My Zsh!
+
+La institucional se puede realizar mediante Curl o wget, puedes elegir la que quieras
+
+**via Curl**
+```
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
+
+**via wget**
+```
+ sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+```
+
+## Tema Powerlevel9k 
+<img src="https://raw.githubusercontent.com/bhilburn/powerlevel9k-logo/master/logo-banner.png" class='responsive-image'>
+
+Después de probar muchos temas para Zsh y conocido las fuentes *monofur for PowerLine*. Llegue al tema [Powerlevel9k](https://github.com/bhilburn/powerlevel9k/) que las combina de una manera genial, y nos permite configurar el prompt de una manera muy fácil y con muchas posibilidades.
+
+
+### Instalacion Powerlevel9k
+
+Dado que ya contamos con Oh-My-Zsh!, la instalación es muy simple: 
+
+```
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+```
+y luego solo necesitamos seleccionar este tema en nuestro archivo de configuracion: ```~/.zshrc```
+
+```
+ZSH_THEME="powerlevel9k/powerlevel9k"
+```
+
+### Instalacion de Fuentes
+
+La instalación de las fuentes se puede hacer de varias maneras también. Yo opte por instalar las fuentes **NERD-Fonts**, dado que es un proyecto muy completo y cuidado de fuentes. 
+
+<img src="https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/images/nerd-fonts-logo.png" class="responsive-image">
+
+```
+git clone git@github.com:ryanoasis/nerd-fonts.git
+
+cd nerd-fonts
+
+./install.zh
+```
+
+> Advertencia: de esta manera se instalan todas las fuentes del proyecto NERD-Fonts y el proyecto es grande. Por lo que al clonar el proyecto este tardara.
+
+bien una vez instaladas, solo necesitamos configurar el ```~/.zshrc``` para activarlas
+```
+POWERLEVEL9K_MODE='nerdfont-complete'
+```
+
+## Configuracion del prompt
+
+Finalmente nos queda configurar el prompt a nuestro gusto, en la wiki del proyecto estan colgadas varias configuraciones que subieron otros usuarios. [Show Off Your Config](https://github.com/bhilburn/powerlevel9k/wiki/Show-Off-Your-Config) 
+
+Estas configuraciones, como ya veníamos haciendo se realizan en el archivo: ```~/.zshrc```
+
+Por ultimo aquí les dejo mi configuración, que es una adaptación de dos config de la wiki, tal como se muestra en la primer imagen. 
+
+<script src="https://gist.github.com/nigromancer/4eadbd17b78d2686d0436b67a4fe5351.js"></script>
+
+<img src="http://www.beekoz.fr/wp-content/uploads/2014/06/Golum-lui-ne-porte-pas-dalliance-%C3%A0-lannulaire.jpeg" class="responsive-image">
+
+> Especial saludos a [@lwayar](https://twitter.com/lwayar) quien me mostró el poder de zsh y las fuentes *monofur for Powerline*. Que te recuperes pronto amigo! 
+
+
+

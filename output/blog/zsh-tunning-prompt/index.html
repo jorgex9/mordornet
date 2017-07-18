@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>zsh tunning prompt! - Mordor-lab</title>
+      <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../../theme/css/lazystrap.css" rel="stylesheet">
+    <link href="../../theme/css/pygments.css" rel="stylesheet">
+    <link href="../../theme/css/lightbox.css" rel="stylesheet">
+    <link rel="shortcut icon" href="../../theme/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="../../theme/favicon.png" type="image/x-icon" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <meta name="description" content="Las escrituras del Nigromancer" />
+
+    <meta name="keywords" content="GNU Linux Debian Mordor Music Cine Geek Bass,zsh,oh_my_zsh,Powerline" />
+</head>
+<body onload="set_years(2017)">
+    <div class="page">
+      <div class="header">
+        <a href="../..">
+          <img src="../../theme/img/logo.png" alt="lazycoder.ru" />
+        </a>
+        <div class="navbar-desc">
+          Las escrituras del Nigromancer
+        </div>
+      </div>
+      <div class="container">
+          <div class="post-date pull-right">18.07.2017</div>
+          <h2 class="post-header">zsh tunning prompt!</h2>
+          <div class="post-metadata pull-right">
+            <a href="../../tag/zsh"><b>#</b>zsh</a>
+            <a href="../../tag/oh_my_zsh"><b>#</b>oh_my_zsh</a>
+            <a href="../../tag/powerline"><b>#</b>Powerline</a>
+          </div>
+          <div class="post-content">
+            <h1>Los clicks mienten!</h1>
+<p>Desde el momento que en que uno empieza a tirar las primeras lineas de comando, empieza a entender como funcionan las cosas, (bueno a un nivel mas granular) y empieza a pasar mas tiempo detrás de una terminal.
+Es por ello que contar con una <em>shell</em> en el que nos sentamos a gusto y nos brinde herramientas que nos ayuden con nuestras tareas es importante.</p>
+<p><img src="https://i.imgur.com/ep93csx.png" class="responsive-image"></p>
+<h2>Zsh</h2>
+<p><a href="http://www.zsh.org/">Z shell</a> (o simplemente zsh) es un potente intérprete de comandos para sistemas operativos de tipo Unix, como por ejemplo los BSD o GNU/Linux.1​ ​ La primera versión de zsh fue escrita por Paul Falstad en 1990, cuando era estudiante en la Universidad de Princeton.</p>
+<p>Zsh se diseñó para poder usarse interactivamente. Se le han incorporado muchas de las características principales de otras shells de Unix como, <em>bash</em>, <em>ksh</em>, o <em>tcsh</em> y además posee características propias originales.</p>
+<h3>Instalacion Zsh en Debian</h3>
+<p>La instalacion es muy simple dado que Zsh se encuentra en repositorio</p>
+<div class="highlight"><pre><span></span>sudo apt-get install zsh
+</pre></div>
+
+
+<p>Ahora nos queda configurar para que sea nuestra shell por defecto, para ello usamos el comando <strong>chsh</strong>, el cual lo lanzamos y nos va a solicitar que les pasemos el path de la shell que queremos usar. El path de zsh es  <strong>/usr/bin/zsh</strong></p>
+<p>ejemplo de uso de chsh:</p>
+<div class="highlight"><pre><span></span>chsh -s
+Contraseña: 
+Cambiando la consola de acceso para nigro8b
+Introduzca el nuevo valor, o pulse INTRO para usar el valor predeterminado
+    Consola de acceso [/usr/bin/zsh]:
+</pre></div>
+
+
+<ul>
+<li>Themes: <a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Themes">https://github.com/robbyrussell/oh-my-zsh/wiki/Themes</a></li>
+<li>Plugins: <a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins">https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins</a></li>
+</ul>
+<blockquote>
+<p>Archivo de configuracion de Zsh:  ~/.zshrc</p>
+</blockquote>
+<h2>Oh My Zsh</h2>
+<p><a href="http://ohmyz.sh/">Oh my Zsh!</a> es una herramienta que nos permite aplicar temas a nuestro prompt y agregar diversos plugins a nuestra shell Zsh. Los temas suelen tener diferente tipo de información integrada, como por ejemplo información del repositorio Git en el que nos encontramos (si es que usamos Git, de no ser así no aparecerá nada) y los plugins suelen contener algunos alias útiles que nos ahorramos de configurar.</p>
+<p><img src="https://camo.githubusercontent.com/5c385f15f3eaedb72cfcfbbaf75355b700ac0757/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6f686d797a73682f6f682d6d792d7a73682d6c6f676f2e706e67" class="responsive-image"></p>
+<h3>Instalación de Oh My Zsh!</h3>
+<p>La institucional se puede realizar mediante Curl o wget, puedes elegir la que quieras</p>
+<p><strong>via Curl</strong></p>
+<div class="highlight"><pre><span></span>sh -c &quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;
+</pre></div>
+
+
+<p><strong>via wget</strong></p>
+<div class="highlight"><pre><span></span> sh -c &quot;$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)&quot;
+</pre></div>
+
+
+<h2>Tema Powerlevel9k</h2>
+<p><img src="https://raw.githubusercontent.com/bhilburn/powerlevel9k-logo/master/logo-banner.png" class='responsive-image'></p>
+<p>Después de probar muchos temas para Zsh y conocido las fuentes <em>monofur for PowerLine</em>. Llegue al tema <a href="https://github.com/bhilburn/powerlevel9k/">Powerlevel9k</a> que las combina de una manera genial, y nos permite configurar el prompt de una manera muy fácil y con muchas posibilidades.</p>
+<h3>Instalacion Powerlevel9k</h3>
+<p>Dado que ya contamos con Oh-My-Zsh!, la instalación es muy simple: </p>
+<div class="highlight"><pre><span></span>git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+</pre></div>
+
+
+<p>y luego solo necesitamos seleccionar este tema en nuestro archivo de configuracion: <code>~/.zshrc</code></p>
+<div class="highlight"><pre><span></span>ZSH_THEME=&quot;powerlevel9k/powerlevel9k&quot;
+</pre></div>
+
+
+<h3>Instalacion de Fuentes</h3>
+<p>La instalación de las fuentes se puede hacer de varias maneras también. Yo opte por instalar las fuentes <strong>NERD-Fonts</strong>, dado que es un proyecto muy completo y cuidado de fuentes. </p>
+<p><img src="https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/images/nerd-fonts-logo.png" class="responsive-image"></p>
+<div class="highlight"><pre><span></span>git clone git@github.com:ryanoasis/nerd-fonts.git
+
+cd nerd-fonts
+
+./install.zh
+</pre></div>
+
+
+<blockquote>
+<p>Advertencia: de esta manera se instalan todas las fuentes del proyecto NERD-Fonts y el proyecto es grande. Por lo que al clonar el proyecto este tardara.</p>
+</blockquote>
+<p>bien una vez instaladas, solo necesitamos configurar el <code>~/.zshrc</code> para activarlas</p>
+<div class="highlight"><pre><span></span>POWERLEVEL9K_MODE=&#39;nerdfont-complete&#39;
+</pre></div>
+
+
+<h2>Configuracion del prompt</h2>
+<p>Finalmente nos queda configurar el prompt a nuestro gusto, en la wiki del proyecto estan colgadas varias configuraciones que subieron otros usuarios. <a href="https://github.com/bhilburn/powerlevel9k/wiki/Show-Off-Your-Config">Show Off Your Config</a> </p>
+<p>Estas configuraciones, como ya veníamos haciendo se realizan en el archivo: <code>~/.zshrc</code></p>
+<p>Por ultimo aquí les dejo mi configuración, que es una adaptación de dos config de la wiki, tal como se muestra en la primer imagen. </p>
+<script src="https://gist.github.com/nigromancer/4eadbd17b78d2686d0436b67a4fe5351.js"></script>
+
+<p><img src="http://www.beekoz.fr/wp-content/uploads/2014/06/Golum-lui-ne-porte-pas-dalliance-%C3%A0-lannulaire.jpeg" class="responsive-image"></p>
+<blockquote>
+<p>Especial saludos a <a href="https://twitter.com/lwayar">@lwayar</a> quien me mostró el poder de zsh y las fuentes <em>monofur for Powerline</em>. Que te recuperes pronto amigo! </p>
+</blockquote>
+          </div>
+          <div class="post-comments">
+            <h4>Comentarios</h4>
+<!-- place code of your favour comment system here -->
+<div id="hypercomments_widget"></div>
+<script type="text/javascript">
+_hcwp = window._hcwp || [];
+_hcwp.push({widget:"Stream", widget_id: 92639 });
+(function() {
+if("HC_LOAD_INIT" in window)return;
+HC_LOAD_INIT = true;
+var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/92639/"+lang+"/widget.js";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(hcc, s.nextSibling);
+})();
+</script>
+          </div>
+      </div>
+    </div>
+    <footer class="footer-wrapper">
+      <div class="container">
+        <div class="footer">
+          <a href="../../archives">Archivos</a>
+          <a href="../../">RSS</a>
+  
+          <a href="http://twitter.com/nigrobyte">twitter</a>
+        </div>
+        <div class="footer">
+          <span id="years">2008-2014</span> &copy; Las escrituras del Nigromancer | Powered by <a href="http://getpelican.com">Pelican</a>| <a href="http://creativecommons.org/licenses/by/4.0/">CC BY</a>
+        </div>
+      </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> 
+    <script src="../../theme/js/lightbox-2.6.min.js"></script>
+    <script src="../../theme/js/lazystrap.js"></script>
+</body>
+</html>
