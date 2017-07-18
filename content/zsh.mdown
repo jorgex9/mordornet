@@ -27,7 +27,7 @@ Ahora nos queda configurar para que sea nuestra shell por defecto, para ello usa
 ejemplo de uso de chsh:
 
 ```
-chsh -s
+chsh
 Contraseña: 
 Cambiando la consola de acceso para nigro8b
 Introduzca el nuevo valor, o pulse INTRO para usar el valor predeterminado
