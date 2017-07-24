@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>AppImage - Mordor-lab</title>
+      <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../../theme/css/lazystrap.css" rel="stylesheet">
+    <link href="../../theme/css/pygments.css" rel="stylesheet">
+    <link href="../../theme/css/lightbox.css" rel="stylesheet">
+    <link rel="shortcut icon" href="../../theme/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="../../theme/favicon.png" type="image/x-icon" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <meta name="description" content="Las escrituras del Nigromancer" />
+
+    <meta name="keywords" content="GNU Linux Debian Mordor Music Cine Geek Bass,appimage" />
+</head>
+<body onload="set_years(2017)">
+    <div class="page">
+      <div class="header">
+        <a href="../..">
+          <img src="../../theme/img/logo.png" alt="lazycoder.ru" />
+        </a>
+        <div class="navbar-desc">
+          Las escrituras del Nigromancer
+        </div>
+      </div>
+      <div class="container">
+          <div class="post-date pull-right">24.07.2017</div>
+          <h2 class="post-header">AppImage</h2>
+          <div class="post-metadata pull-right">
+            <a href="../../tag/appimage"><b>#</b>appimage</a>
+          </div>
+          <div class="post-content">
+            <p>En medio de mucho repositorios, compilaciones y dependencias; las formas de instalar una aplicación en GNU/Linux son muchas. En ocasiones muy fáciles y en otras un tanto complicadas. Pero hoy vamos a hablar sobre un tipo de paquete que lo trae todo.</p>
+<h1>AppImage</h1>
+<p>AppImage es un archivo descargale para GNU/Linux que contiene una aplicación y todo lo que la aplicación necesita para ejecutar (por ejemplo, bibliotecas, iconos, fuentes, traducciones, etc.) las cuales no se esperan que formen parte de cada sistema destino.</p>
+<p><img src="http://appimage.org/images/logo3.svg" class="responsive-image"></p>
+<p>AppImage nació bajo el nombre de Klik y más tarde se transformó en PortableLinuxApps, finalmente este tipo de paquete se llamó AppImage. Este paquete se caracteriza por no necesitar de ninguna distribución ni de ninguna librería, todo está en la aplicación que curiosamente no se instala en la distribución.
+<img src="/archives/images/appimage-distros.png" class="responsive-image"></p>
+<h2>Download an application, make it executable, and run!</h2>
+<p>Este titulo ya nos lo dice todo, y es que es así de fácil. 
+Para descargar una aplicación podemos encontrarlas en los sitios oficiales de los proyectos que distribuyen sus aplicaciones bajo <strong>AppImage</strong>, o bien también contamos con un amplio cataloga de AppImage para descargar <a href="https://bintray.com/probono/AppImages">Aquí</a>, listado completo <a href="https://dl.bintray.com/probono/AppImages/">https://dl.bintray.com/probono/AppImages/</a></p>
+<p>Le damos permisos de ejecución desde la terminal (también pueden hacerlo de manera gráfica desde un explorador de archivos)</p>
+<div class="highlight"><pre><span></span>chmod a+x paquete.AppImage
+</pre></div>
+
+
+<blockquote>
+<p>Nótese que no se necesitan permisos de root.</p>
+</blockquote>
+<p>y a correr</p>
+<div class="highlight"><pre><span></span>./paquete.AppImage
+</pre></div>
+
+
+<p>Bien de esta manera la "instalación o ejecución" es realmente simple. Pero como vemos esto no os ha creado una entrada en el menú de aplicaciones o un acceso directo. Por lo que deberíamos hacerlo nosotros. </p>
+<p>Como ya habíamos visto en el post en el que hablamos de <a href="http://mordor-lab.com/blog/dmenu/">dmenu</a>, este lanzador solo necesita que le creemos un enlace simbólico para que pueda ser lanzado.</p>
+<div class="highlight"><pre><span></span>cd /usr/bin
+sudo ln -s /home/usuario/apps/paquete.AppImage paquete
+</pre></div>
+
+
+<p>De esta manera solo necesitamos lanzar <strong>dmenu</strong> y escribir el nombre del paquete.</p>
+<h2>Aplicaciones interesantes bajo AppImage en sitios oficiales</h2>
+<ul>
+<li><a href="https://pomelloapp.com">Pomello</a></li>
+<li><a href="http://www.strem.io/">Stremio</a></li>
+</ul>
+<p><img src="https://vignette1.wikia.nocookie.net/lotr/images/0/06/Melkor-and-Ungoliant.jpg" class="responsive-image"></p>
+          </div>
+          <div class="post-comments">
+            <h4>Comentarios</h4>
+<!-- place code of your favour comment system here -->
+<div id="hypercomments_widget"></div>
+<script type="text/javascript">
+_hcwp = window._hcwp || [];
+_hcwp.push({widget:"Stream", widget_id: 92639 });
+(function() {
+if("HC_LOAD_INIT" in window)return;
+HC_LOAD_INIT = true;
+var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/92639/"+lang+"/widget.js";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(hcc, s.nextSibling);
+})();
+</script>
+          </div>
+      </div>
+    </div>
+    <footer class="footer-wrapper">
+      <div class="container">
+        <div class="footer">
+          <a href="../../archives">Archivos</a>
+          <a href="../../">RSS</a>
+  
+          <a href="http://twitter.com/nigrobyte">twitter</a>
+        </div>
+        <div class="footer">
+          <span id="years">2008-2014</span> &copy; Las escrituras del Nigromancer | Powered by <a href="http://getpelican.com">Pelican</a>| <a href="http://creativecommons.org/licenses/by/4.0/">CC BY</a>
+        </div>
+      </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> 
+    <script src="../../theme/js/lightbox-2.6.min.js"></script>
+    <script src="../../theme/js/lazystrap.js"></script>
+</body>
+</html>

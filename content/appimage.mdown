@@ -1,0 +1,55 @@
+Title: AppImage
+Date: 2017-07-24 16:40
+Category: About
+Tags: appimage
+
+En medio de mucho repositorios, compilaciones y dependencias; las formas de instalar una aplicación en GNU/Linux son muchas. En ocasiones muy fáciles y en otras un tanto complicadas. Pero hoy vamos a hablar sobre un tipo de paquete que lo trae todo.
+
+# AppImage
+
+AppImage es un archivo descargale para GNU/Linux que contiene una aplicación y todo lo que la aplicación necesita para ejecutar (por ejemplo, bibliotecas, iconos, fuentes, traducciones, etc.) las cuales no se esperan que formen parte de cada sistema destino.
+
+<img src="http://appimage.org/images/logo3.svg" class="responsive-image">
+
+AppImage nació bajo el nombre de Klik y más tarde se transformó en PortableLinuxApps, finalmente este tipo de paquete se llamó AppImage. Este paquete se caracteriza por no necesitar de ninguna distribución ni de ninguna librería, todo está en la aplicación que curiosamente no se instala en la distribución.
+<img src="/archives/images/appimage-distros.png" class="responsive-image">
+
+## Download an application, make it executable, and run!
+
+Este titulo ya nos lo dice todo, y es que es así de fácil. 
+Para descargar una aplicación podemos encontrarlas en los sitios oficiales de los proyectos que distribuyen sus aplicaciones bajo **AppImage**, o bien también contamos con un amplio cataloga de AppImage para descargar [Aquí](https://bintray.com/probono/AppImages), listado completo [https://dl.bintray.com/probono/AppImages/](https://dl.bintray.com/probono/AppImages/)
+
+Le damos permisos de ejecución desde la terminal (también pueden hacerlo de manera gráfica desde un explorador de archivos)
+```
+chmod a+x paquete.AppImage
+```
+> Nótese que no se necesitan permisos de root.
+
+y a correr
+
+```
+./paquete.AppImage
+
+```
+
+Bien de esta manera la "instalación o ejecución" es realmente simple. Pero como vemos esto no os ha creado una entrada en el menú de aplicaciones o un acceso directo. Por lo que deberíamos hacerlo nosotros. 
+
+Como ya habíamos visto en el post en el que hablamos de [dmenu](http://mordor-lab.com/blog/dmenu/), este lanzador solo necesita que le creemos un enlace simbólico para que pueda ser lanzado.
+
+```
+cd /usr/bin
+sudo ln -s /home/usuario/apps/paquete.AppImage paquete
+
+```
+
+De esta manera solo necesitamos lanzar **dmenu** y escribir el nombre del paquete.
+
+## Aplicaciones interesantes bajo AppImage en sitios oficiales
+
+* [Pomello](https://pomelloapp.com)
+* [Stremio](http://www.strem.io/)
+
+
+<img src="https://vignette1.wikia.nocookie.net/lotr/images/0/06/Melkor-and-Ungoliant.jpg" class="responsive-image">
+
+
