@@ -50,6 +50,7 @@ De esta manera solo necesitamos lanzar **dmenu** y escribir el nombre del paquet
 * [Stremio](http://www.strem.io/)
 
 
-<img src="https://vignette1.wikia.nocookie.net/lotr/images/0/06/Melkor-and-Ungoliant.jpg" class="responsive-image">
+
+<img src="/archives/images/Melkor-and-Ungoliant.jpg" class="responsive-image">
 
 
