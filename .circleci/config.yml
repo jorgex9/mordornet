@@ -1,0 +1,13 @@
+version: 2
+jobs:
+  build:
+    machine: true
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "57:0d:3a:ff:da:c8:9e:71:dc:d1:35:91:7c:f7:50:42"
+      - checkout
+      - run: docker login -u $DOCKER_USER -p $DOCKER_PASS
+      - run: docker build -t nicrom/mordor-lab:$CIRCLE_SHA1 .
+      - run: docker push nicrom/mordor-lab:$CIRCLE_SHA1
+      - run: ssh -o StrictHostKeyChecking=no nicrom@mordor-lab.duckdns.org "/bin/bash /home/nicrom/dockerProjects/mordor/deploy.sh $CIRCLE_SHA1"    
